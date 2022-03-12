@@ -13,5 +13,6 @@ public class ProblemSet2_2 {
         System.out.println("* ****** *");
         System.out.println("*        *");
         System.out.println("**********");
+        //The Chinese word for Country
     } 
 }
