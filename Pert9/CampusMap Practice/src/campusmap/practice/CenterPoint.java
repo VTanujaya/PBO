@@ -57,9 +57,6 @@ public final class CenterPoint {
         study.add(dr1);
         study.add(dr2);
         study.add(dr3);
-        for (Dorm dr : study) {
-            dr.setPopulation(1);
-        }
         setCenter(study);
     }
 
@@ -69,8 +66,8 @@ public final class CenterPoint {
         double totalPopulation = 0;
         int xy = 0;
         for (Dorm dr : dorm) {
-            totalX += (dr.getX()- (dr.getWidth() / 2)) * dr.getPopulation();
-            totalY += (dr.getY()-(dr.getWidth() / 2)) * dr.getPopulation();
+            totalX += (dr.getX() - (dr.getWidth() / 2)) * dr.getPopulation();
+            totalY += (dr.getY() - (dr.getWidth() / 2)) * dr.getPopulation();
             totalPopulation += dr.getPopulation();
         }
         x = totalX / totalPopulation;
@@ -80,13 +77,13 @@ public final class CenterPoint {
             int tempY = (int) y;
             tempX -= dr.getX();
             tempY -= dr.getY();
-            xy = (tempX + tempY)+22;
+            xy = (tempX + tempY) + 22;
         }
+        distance.setText("Distance:" + Math.abs(xy));
         center.setCenterX(x);
         center.setCenterY(y);
         distance.setLayoutX(x - 10);
         distance.setLayoutY(y - 5);
-        distance.setText("Distance:" + Math.abs(xy));
         label.setLayoutX(x - 10);
         label.setLayoutY(y - 20);
     }

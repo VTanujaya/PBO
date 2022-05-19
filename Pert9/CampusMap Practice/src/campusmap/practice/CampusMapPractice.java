@@ -6,10 +6,7 @@ package campusmap.practice;
 
 import java.util.ArrayList;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -26,10 +23,10 @@ public class CampusMapPractice extends Application {
         Scene scene = new Scene(root, 600, 500, Color.rgb(50, 50, 50));
         ArrayList<Dorm> all = new ArrayList<>();
         ArrayList<CenterPoint> center = new ArrayList<>();
-        Dorm dr1 = new Dorm(1, 420, center,160,231,0);
-        Dorm dr2 = new Dorm(2, 120, center,10,222,20);
-        Dorm dr3 = new Dorm(3, 330, center,40,30,20);
-        Dorm dr4 = new Dorm(4, 250, center,255,255,0);
+        Dorm dr1 = new Dorm(1, 420, center, 160, 231, 0);
+        Dorm dr2 = new Dorm(2, 120, center, 10, 222, 20);
+        Dorm dr3 = new Dorm(3, 330, center, 40, 30, 20);
+        Dorm dr4 = new Dorm(4, 250, center, 255, 255, 0);
         all.add(dr1);
         all.add(dr2);
         all.add(dr3);

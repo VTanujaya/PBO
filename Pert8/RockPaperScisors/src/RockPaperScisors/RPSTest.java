@@ -20,7 +20,7 @@ public class RPSTest extends Application {
         MainMenu menu = new MainMenu(primaryStage, game, cr);
         primaryStage.setTitle("Rock Paper Scisors");
         primaryStage.setResizable(false);
-        primaryStage.setScene(menu.main);
+        primaryStage.setScene(menu.getScene());
         primaryStage.show();
     }
 

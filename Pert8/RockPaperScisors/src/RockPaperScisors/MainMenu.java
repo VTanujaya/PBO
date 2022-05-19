@@ -21,8 +21,8 @@ import javafx.stage.Stage;
  */
 public class MainMenu {
 
-    Group home = new Group();
-    final Scene main = new Scene(home, 600, 500, Color.rgb(50, 50, 50));
+    private Group home = new Group();
+    private final Scene main = new Scene(home, 600, 500, Color.rgb(50, 50, 50));
     private Button start = new Button();
     private Button credits = new Button();
     private Button exit = new Button();
@@ -49,9 +49,12 @@ public class MainMenu {
     }
 
     public void Interaction(Stage game, RPS rps, Credits cr) {
-        start.setOnMouseClicked((MouseEvent me) -> rps.getMenu(game, main, rps));
-        credits.setOnMouseClicked((MouseEvent me) -> cr.getMenu(game, main, cr));
+        start.setOnMouseClicked((MouseEvent me) -> rps.getMenu(game, main));
+        credits.setOnMouseClicked((MouseEvent me) -> cr.getMenu(game, main));
         exit.setOnMouseClicked((MouseEvent me) -> System.exit(0));
     }
 
+    public Scene getScene() {
+        return main;
+    }
 }

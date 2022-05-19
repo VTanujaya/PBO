@@ -14,9 +14,9 @@ public class Credits {
 
     private Text coder = new Text(0, 40, "Programmer: Vincent Tanujaya");
     private Text graphics = new Text(0, 40, "Illustration: Irasutoya(いらすとや)");
-    Group cred = new Group();
-    Scene credit = new Scene(cred, 600, 500, Color.rgb(50, 50, 50));
     private Button exit = new Button("Exit");
+    private Group cred = new Group();
+    private Scene credit = new Scene(cred, 600, 500, Color.rgb(50, 50, 50));
 
     public Credits() {
         coder.setFont(Font.font(Font.getDefault().getFamily(), FontWeight.BOLD, 20));
@@ -29,8 +29,8 @@ public class Credits {
         cred.getChildren().addAll(coder, graphics, exit);
     }
 
-    public void getMenu(Stage st, Scene sc, Credits cr) {
-        st.setScene(cr.credit);
+    public void getMenu(Stage st, Scene sc) {
+        st.setScene(this.credit);
         interaction(st, sc);
     }
 

@@ -17,23 +17,22 @@ import javafx.stage.Stage;
 
 public class RPS {
 
-    Random rand = new Random();
-    static Group root = new Group();
-    final Scene scene = new Scene(root, 600, 500, Color.rgb(50, 50, 50));
+    private Random rand = new Random();
+    private static Group root = new Group();
+    private final Scene scene = new Scene(root, 600, 500, Color.rgb(50, 50, 50));
     private int scores;
     private int human;
     private int computer = rand.nextInt(3);
-    private Timeline time;
     private Image rock = new Image(getClass().getResource("Image/Rock.png").toString());
     private ImageView rockView = new ImageView(rock);
     private Image paper = new Image(getClass().getResource("Image/Paper.png").toString());
     private ImageView paperView = new ImageView(paper);
-    private ArrayList<Image> images = new ArrayList<>();
     private Image scisors = new Image(getClass().getResource("Image/Scisors.png").toString());
     private ImageView scisorsView = new ImageView(scisors);
     private Image smoke = new Image(getClass().getResource("Image/Smoke.png").toString());
     private ImageView smokeView = new ImageView(smoke);
     private ImageView hiddenView = new ImageView();
+    private ArrayList<Image> images = new ArrayList<>();
     private Text score = new Text(0, 40, "Score: " + scores);
     private Text status = new Text();
     private Button exit = new Button("Exit");
@@ -69,13 +68,13 @@ public class RPS {
         smokeView.setPreserveRatio(true);
         smokeView.setFitHeight(150);
         smokeView.setLayoutX(220);
-        exit.setLayoutX(565);
         smokeView.setLayoutY(100);
+        exit.setLayoutX(565);
         root.getChildren().addAll(rockView, paperView, scisorsView, exit, score, hiddenView, smokeView, status);
     }
 
-    public void getMenu(Stage game, Scene sc, RPS rps) {
-        game.setScene(rps.scene);
+    public void getMenu(Stage game, Scene sc) {
+        game.setScene(this.scene);
         smokeView.setImage(smoke);
         status.setOpacity(0);
         Interaction(game, sc);
@@ -103,11 +102,6 @@ public class RPS {
 
     }
 
-    private void Timeline(Stage st, Scene sc) {
-        smokeView.setImage(null);
-        status.setOpacity(100);
-        Interaction(st, sc);
-    }
     private void Comparison(Stage st, Scene sc) {
         this.computer = rand.nextInt(3);
         this.hiddenView.setImage(images.get(computer));
@@ -120,10 +114,9 @@ public class RPS {
             this.scores++;
             score.setText("Score: " + scores);
         }
-        Timeline(st, sc);
+        smokeView.setImage(null);
+        status.setOpacity(100);
+        Interaction(st, sc);
     }
 
-    public Scene getScene() {
-        return scene;
-    }
 }
