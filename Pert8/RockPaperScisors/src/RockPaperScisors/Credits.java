@@ -35,7 +35,6 @@ public class Credits {
     }
 
     public void interaction(Stage st, Scene sc) {
-        exit.setOnMousePressed((MouseEvent me)
-                -> st.setScene(sc));
+        exit.setOnMousePressed((MouseEvent me) -> st.setScene(sc));
     }
 }

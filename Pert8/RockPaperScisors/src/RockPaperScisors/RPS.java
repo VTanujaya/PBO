@@ -92,7 +92,7 @@ public class RPS {
             Comparison(st, sc);
         });
         paperView.setOnMousePressed((MouseEvent me) -> {
-            human = 1;
+            human = 1; 
             Comparison(st, sc);
         });
         scisorsView.setOnMousePressed((MouseEvent me) -> {
